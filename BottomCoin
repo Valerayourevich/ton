@@ -1,0 +1,52 @@
+bash
+   mkdir BottomCoin
+   cd BottomCoin
+func
+   ;; BottomCoin.fc
+   ;; Простой пример токена на блокчейне TON
+
+   () main() {
+       ;; Здесь будет логика вашего смарт-контракта
+   }
+bash
+   func -o BottomCoin.fif BottomCoin.fc
+fift
+   ;; BottomCoin.fif
+   ;; Инициализация контракта
+
+   "BottomCoin.fc" include
+   <boc> B{ B>constant
+fift
+   ;; deploy.fif
+   ;; Деплой контракта
+
+   "BottomCoin.fif" include
+   <boc> B{ B>constant
+bash
+   fift -s deploy.fif
+fift
+   ;; interaction.fif
+   ;; Взаимодействие с контрактом
+
+   "BottomCoin.fif" include
+   <boc> B{ B>constant
+bash
+   fift -s interaction.fif
+func
+;; BottomCoin.fc
+;; Простой пример токена на блокчейне TON
+
+() main() {
+    ;; Инициализация контракта
+    ;; Здесь будет логика вашего смарт-контракта
+}
+
+int balance_of(int addr) method_id {
+    ;; Возвращает баланс адреса
+    return 0; ;; Замените на реальную логику
+}
+
+int transfer(int from, int to, int amount) method_id {
+    ;; Перевод токенов
+    return 1; ;; Замените на реальную логику
+}
